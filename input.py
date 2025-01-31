@@ -14,4 +14,3 @@ print ("Sum of the number is : " , a + b)
 
 print ("The name is : " , name)
 print ("The age is : " , age)
-print ("name")
