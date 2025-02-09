@@ -8,7 +8,7 @@ age = int (input ("Enter your age : "))
 
 
 print ("1 number is : " , a)
-print ("1 number is : " , b)
+print ("2 number is : " , b)
 
 print ("Sum of the number is : " , a + b)
 
