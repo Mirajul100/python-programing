@@ -24,15 +24,30 @@ while True :
                 print (f"{index + 1}. {item.title()}")
 
         case "edit":
+            file = open ("file/student_name.txt" , "r")
+            student_name = file.readlines()
+            file.close()
+        
             number = int (input ("Enter the number you need to edit : "))
             number = number - 1
-            newName = input ("Enter the student name : ")
+            newName = input ("Enter the student name : ") + "\n"
+            
+            file = open("file/student_name.txt","w")
             student_name[number] = newName
+            file.writelines(student_name)
+            file.close()
 
         case "delete":
             number = int (input ("Enter the number you need to delete the name : "))
-            number = number + 1
-            student_name = student_name.pop(number)
+            number = number - 1
+            file = open("file/student_name.txt" , "r")
+            student_name = file.readlines()
+            file.close()
+
+            file = open("file/student_name.txt","w")
+            student_name.pop(number)
+            file.writelines(student_name)
+            file.close()
 
         case "exit":
             break
