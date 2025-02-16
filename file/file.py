@@ -5,49 +5,46 @@ while True :
     match user_input.lower():
         case "add":
             studentName = input ("Enter the student name : ") + "\n"
-            file = open('file/student_name.txt' , "r")
-            student_name = file.readlines()
-            file.close()
+            
+            with open("file/student_name.txt","r") as file:
+                student_name = file.readlines()
 
             student_name.append(studentName)
 
-            file = open('file/student_name.txt' , "w")
-            file.writelines(student_name)
-            file.close()
+            with open("file/student_name.txt","w") as file:
+                file.writelines(student_name)
 
         case "show":
-            file = open("file/student_name.txt" , "r")
-            student_name = file.readlines()
-            file.close()
+            with open("file/student_name.txt","r") as file:
+                student_name = file.readlines()
 
             for index , item in enumerate(student_name) :
+                item = item.strip("\n")
                 print (f"{index + 1}. {item.title()}")
 
         case "edit":
-            file = open ("file/student_name.txt" , "r")
-            student_name = file.readlines()
-            file.close()
+            
+            with open("file/student_name.txt","r") as file:
+                student_name = file.readlines()
         
             number = int (input ("Enter the number you need to edit : "))
             number = number - 1
             newName = input ("Enter the student name : ") + "\n"
             
-            file = open("file/student_name.txt","w")
-            student_name[number] = newName
-            file.writelines(student_name)
-            file.close()
+            with open("file/student_name.txt","w") as file:
+                student_name[number] = newName
+                file.writelines(student_name)
 
         case "delete":
             number = int (input ("Enter the number you need to delete the name : "))
             number = number - 1
-            file = open("file/student_name.txt" , "r")
-            student_name = file.readlines()
-            file.close()
+            
+            with open("file/student_name.txt" , "r") as file:
+                student_name = file.readlines()
 
-            file = open("file/student_name.txt","w")
-            student_name.pop(number)
-            file.writelines(student_name)
-            file.close()
+            with open("file/student_name.txt","w") as file:
+                student_name.pop(number)
+                file.writelines(student_name)
 
         case "exit":
             break
