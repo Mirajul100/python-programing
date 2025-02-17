@@ -55,4 +55,7 @@ while True :
         with open (f"{File}" , "w") as file:
             file.writelines(employ)
 
+    else :
+        print ("Comment is not valid!")
+
 print ("Thank you")
