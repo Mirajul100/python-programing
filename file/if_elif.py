@@ -43,7 +43,7 @@ while True :
 
     elif "delete" in user_input.lower():
 
-        number = int (input("Enter the number you need to delete : "))
+        number = int (user_input[7:])
         number -= 1
 
         with open (f"{File}" , "r") as file:
