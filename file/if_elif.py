@@ -1,10 +1,10 @@
-def readFile(filePath):
+def readFile(filePath = "file/employ.txt"):
     with open (filePath , "r") as file:
         File = file.readlines()
     return File
 
 
-def writeFile(filePath , employName):
+def writeFile(employName,filePath  = "file/employ.txt"):
     with open (filePath , "w") as file:
         file.writelines(employName)
 
@@ -16,14 +16,14 @@ while True :
     if user_input.lower().startswith("add"):
         Employ = user_input[4:] + "\n"
 
-        employName = readFile("file/employ.txt")
+        employName = readFile()
 
         employName.append(Employ)
 
-        writeFile("file/employ.txt" , employName)
+        writeFile(employName)
 
     elif user_input.lower().startswith("show"):
-        Employ = readFile("file/employ.txt")
+        Employ = readFile()
 
         for index , item in enumerate(Employ):
             print (f"{index + 1}. {item.title().strip("\n")}")
@@ -38,13 +38,13 @@ while True :
 
             newEmploy = input ("Enter the name you need to edit : ")
 
-            Employ = readFile("file/employ.txt")
+            Employ = readFile()
 
             print (f"You edited : {Employ[number].title().strip()}--TO--{newEmploy.title()}")
             
-            employName[number] = newEmploy + "\n"
+            Employ[number] = newEmploy + "\n"
 
-            writeFile("file/employ.txt" , employName)
+            writeFile(Employ)
 
         except ValueError:
             print ("Enter the number you need to edit")
@@ -56,12 +56,12 @@ while True :
             number = int (user_input[7:])
             number -= 1
 
-            Employ = readFile("file/employ.txt")
+            Employ = readFile()
 
             print (f"Deleted Name is : {Employ[number].title().strip("\n")}")
             Employ.pop(number)
 
-            writeFile("file/employ.txt" , Employ)
+            writeFile(Employ)
 
         except ValueError:
             print ("Enter the number to delete the name")
