@@ -1,4 +1,14 @@
-File = "file/employ.txt"
+def readFile(filePath):
+    with open (filePath , "r") as file:
+        File = file.readlines()
+    return File
+
+
+def writeFile(filePath , employName):
+    with open (filePath , "w") as file:
+        file.writelines(employName)
+
+
 while True :
     user_input = input ("Enter add , show , edit , delete , exit : ")
     user_input = user_input.strip()
@@ -6,19 +16,16 @@ while True :
     if user_input.lower().startswith("add"):
         Employ = user_input[4:] + "\n"
 
-        with open (f"{File}" , "r") as file:
-            employ = file.readlines()
+        employName = readFile("file/employ.txt")
 
-        employ.append(Employ)
+        employName.append(Employ)
 
-        with open (f"{File}" , "w") as file :
-            file.writelines(employ)
+        writeFile("file/employ.txt" , employName)
 
     elif user_input.lower().startswith("show"):
-        with open (f"{File}" , "r") as file:
-            employ = file.readlines()
+        Employ = readFile("file/employ.txt")
 
-        for index , item in enumerate(employ):
+        for index , item in enumerate(Employ):
             print (f"{index + 1}. {item.title().strip("\n")}")
 
     elif user_input.lower().startswith("exit"):
@@ -31,17 +38,16 @@ while True :
 
             newEmploy = input ("Enter the name you need to edit : ")
 
-            with open(f"{File}" , "r") as file:
-                employ = file.readlines()
+            Employ = readFile("file/employ.txt")
 
-            print (f"You edited : {employ[number].title().strip()}--TO--{newEmploy.title()}")
+            print (f"You edited : {Employ[number].title().strip()}--TO--{newEmploy.title()}")
             
-            employ[number] = newEmploy + "\n"
+            employName[number] = newEmploy + "\n"
 
-            with open (f"{File}" , "w") as file:
-                file.writelines(employ)
+            writeFile("file/employ.txt" , employName)
+
         except ValueError:
-            print ("You entered wrong please enter number")
+            print ("Enter the number you need to edit")
             continue
 
     elif user_input.lower().startswith("delete"):
@@ -50,14 +56,13 @@ while True :
             number = int (user_input[7:])
             number -= 1
 
-            with open (f"{File}" , "r") as file:
-                employ = file.readlines()
+            Employ = readFile("file/employ.txt")
 
-            print (f"Deleted Name is : {employ[number].title()}")
-            employ.pop(number)
+            print (f"Deleted Name is : {Employ[number].title().strip("\n")}")
+            Employ.pop(number)
 
-            with open (f"{File}" , "w") as file:
-                file.writelines(employ)
+            writeFile("file/employ.txt" , Employ)
+
         except ValueError:
             print ("Enter the number to delete the name")
             continue
