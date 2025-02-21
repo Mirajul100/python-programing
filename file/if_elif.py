@@ -1,4 +1,8 @@
 from function import readFile ,writeFile
+import time
+
+date = time.strftime("%b %d, %Y:%H:%M:%S")
+print (f"Current time : {date}")
 
 while True :
     user_input = input ("Enter add , show , edit , delete , exit : ")
