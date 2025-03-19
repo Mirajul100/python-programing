@@ -13,5 +13,13 @@ st.text_input(label="Select the student name",
               placeholder="Enter student name..", 
               on_change=add_student , key= "newStudent")
 
+st.subheader("Select the student name to deleted")
+
 for index , name in enumerate(studentName):
-    st.checkbox(f"{index + 1}..{name.title()}")
+    checkBox = st.checkbox(f"{index + 1} . {name.title()}", 
+                           key=name)
+    if checkBox:
+        studentName.pop(index)
+        function.writeFile(studentName)
+        del st.session_state[name]
+        st.rerun()
