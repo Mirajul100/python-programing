@@ -4,17 +4,14 @@ import function
 studentName = function.readFile()
 
 def add_student():
-    student = st.session_state["newStudentName"] + "\n"
-    studentName.append(student)
+    new_student = st.session_state["newStudent"] + "\n"
+    studentName.append(new_student)
     function.writeFile(studentName)
 
-st.title("Student management")
+st.title("Student management system")
+st.text_input(label="Select the student name", 
+              placeholder="Enter student name..", 
+              on_change=add_student , key= "newStudent")
 
-st.subheader("This is my student management system")
-st.text_input (label="Enter name" , placeholder="Enter student name.." , 
-               on_change=add_student , key="newStudentName")
-st.write ("Select the student name")
-
-for name in studentName:
-    st.checkbox(name.title())
-
+for index , name in enumerate(studentName):
+    st.checkbox(f"{index + 1}..{name.title()}")
