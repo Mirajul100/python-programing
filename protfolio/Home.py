@@ -1,6 +1,21 @@
 import streamlit as st
+import time
 
 st.set_page_config(layout="wide")
+
+time1 = time.strftime("%b:%d:%Y")
+time2 = time.strftime("%H:%M:%S")
+
+emcol , p_col , emcol1 = st.columns([ 9 , 9 , 5])
+
+with emcol:
+    st.subheader(time1)
+
+with p_col:
+    st.subheader("Mirajul Islam Anik")
+
+with emcol1:
+    st.subheader(time2)
 
 col1 , empty_col ,col2 = st.columns([3, 0.2, 3])
 
