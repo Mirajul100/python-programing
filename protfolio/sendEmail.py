@@ -6,6 +6,8 @@ def send_email(message):
     port = 465
 
     userEmail = "mirajulislamanik100@gmail.com"
+
+    # I use environment variable to get password
     password = os.getenv("PASSWORD")
 
     receiver = "mirajulislamanik100@gmail.com"
