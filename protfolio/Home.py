@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="My Portfolio Website",layout="wide" , page_icon=("protfolio/home.png"))
 
 time1 = time.strftime("%b:%d:%Y")
 time2 = time.strftime("%H:%M:%S")
@@ -34,7 +34,7 @@ with open ("protfolio/myInfo.txt","r") as file:
 
 st.subheader("Below you can find my information. Feel free to contact me!")
 
-col3 , empcol1 ,col4, empcol2, col5 = st.columns([2 , 0.6 ,2 , 0.6 , 2])
+col3 , col4, col5, col6 = st.columns(4 , gap="large" , vertical_alignment="bottom")
 
 with col3:
     link = "[Link](https://github.com/Mirajul100)"
@@ -45,7 +45,7 @@ with col3:
 
 with col4:
     st.image("protfolio/google.png")
-    st.title("Google Account")
+    st.title("Google  Account")
     st.write("This is my google account")
     st.write("[Link](mirajulislamanik100@gmail.com)")
 
@@ -54,3 +54,9 @@ with col5:
     st.title("LinkedIn Account")
     st.write("This is my LinkedIn account")
     st.write("[Link](https://www.linkedin.com/in/anik-matubbor-mi-anik-3a5038358/)")
+
+with col6:
+    st.image("protfolio/facebook.png")
+    st.title("Facebook Account")
+    st.write("This is my Facebook account")
+    st.write("[Link](https://www.facebook.com/mionik.mionik.3)")

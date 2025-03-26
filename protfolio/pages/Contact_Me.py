@@ -1,6 +1,8 @@
 import streamlit as st
 from sendEmail import send_email
 
+st.set_page_config(page_title="Contact Me" , layout="centered" , page_icon="protfolio/contract.png")
+
 st.title("Contact Me")
 
 with st.form(key="email_form"):
@@ -16,4 +18,4 @@ From:{user_email}
 
 if button:
     send_email(message)
-    st.info("Your email was sended successfully")
+    st.success("Your email was sended successfully")
