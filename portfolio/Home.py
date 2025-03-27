@@ -5,8 +5,11 @@ st.set_page_config(page_title="My Portfolio Website",layout="wide" , page_icon=(
 
 time1 = time.strftime("%b:%d:%Y")
 time2 = time.strftime("%H:%M:%S")
+st.divider()
 
 emcol , p_col , emcol1 = st.columns([ 9 , 9 , 5])
+
+st.divider()
 
 with emcol:
     st.subheader(time1)
@@ -17,7 +20,7 @@ with p_col:
 with emcol1:
     st.subheader(time2)
 
-col1 , empty_col ,col2 = st.columns([3, 0.2, 3])
+col1 , col2 = st.columns(2 , gap="medium" , vertical_alignment="center")
 
 with col1:
     st.image("portfolio/Image/image.jpeg" , width=(600))
@@ -29,10 +32,16 @@ with col2:
     st.info(" Phon Number: 01916269862 ")
     st.info(" Personal Email: mianikanikmatubbor@gmail.com")
 
+st.divider()
+
 with open ("portfolio/myInfo.txt","r") as file:
     st.info(file.read().title())
 
+st.divider()
+
 st.subheader("Below you can find my information. Feel free to contact me!")
+
+st.divider()
 
 col3 , col4, col5, col6 = st.columns(4 , gap="large" , vertical_alignment="bottom")
 
@@ -60,3 +69,5 @@ with col6:
     st.title("Facebook Account")
     st.write("This is my Facebook account")
     st.write("[Link](https://www.facebook.com/mionik.mionik.3)")
+
+st.divider()

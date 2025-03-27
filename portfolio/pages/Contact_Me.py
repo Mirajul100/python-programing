@@ -7,7 +7,9 @@ st.title("Contact Me")
 
 with st.form(key="email_form"):
     user_email = st.text_input("Your Email Address", placeholder=("Enter Email Address..."))
+    st.divider()
     raw_message = st.text_area("Your Message" , placeholder=("Enter Message..."))
+    st.divider()
     message = f"""\
 Subject: Portfolio New email from {user_email}
 
