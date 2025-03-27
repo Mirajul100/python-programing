@@ -34,4 +34,4 @@ for index , raw in df.iterrows():
         for i in range(25 , 298 , 10):
             pdf.line(10 , i , 200 , i)
 
-pdf.output("output.pdf")
+pdf.output("pdf/output.pdf")
