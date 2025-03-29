@@ -18,7 +18,7 @@ for index , raw in df.iterrows():
     # Footer section
     pdf.ln(255)
     pdf.set_font(family="times" , style="I" , size=8)
-    pdf.set_text_color(180 , 180 , 180)
+    pdf.set_text_color( 45 , 64 , 5)
     pdf.cell(w=0 , h=10 , txt=raw["Topic"] , align="R")
 
     for i in range(raw["Pages"] - 1):
