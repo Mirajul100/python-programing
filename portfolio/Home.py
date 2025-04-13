@@ -23,10 +23,10 @@ with emcol1:
 col1 , col2 = st.columns(2 , gap="medium" , vertical_alignment="center")
 
 with col1:
-    st.image("portfolio/Image/image.jpeg" , width=(600))
+    st.image("portfolio/Image/anik.jpg" , width=(600))
 
 with col2:
-    st.title("My Personal Information")
+    st.subheader("My Personal Information")
     st.info("Name : Mirajul Islam Anik")
     st.info(" Phon Number: 01747200359 ")
     st.info(" Phon Number: 01916269862 ")
