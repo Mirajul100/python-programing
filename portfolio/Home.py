@@ -23,7 +23,7 @@ with emcol1:
 col1 , col2 = st.columns(2 , gap="medium" , vertical_alignment="center")
 
 with col1:
-    st.image("portfolio/Image/pro.jpeg" , width=(600))
+    st.image("portfolio/Image/pro.png" , width=(600))
 
 with col2:
     st.subheader("My Personal Information")
