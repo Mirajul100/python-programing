@@ -39,7 +39,15 @@ with open ("portfolio/myInfo.txt","r") as file:
 
 st.divider()
 
-st.subheader("Below you can find my information. Feel free to contact me!")
+incol4 ,incol5 , incol6 =st.columns([3, 10, 1.75],vertical_alignment="center")
+
+with incol4:
+    pass
+with incol5:
+    st.subheader("Below you can find my information. Feel free to contact me!")
+
+with incol6:
+    pass
 
 st.divider()
 
@@ -79,7 +87,19 @@ with col6:
 
 st.divider()
 
-col7 , col8 , col9 = st.columns(3 , gap="medium" , vertical_alignment="bottom")
+incol1 ,incol2 , incol3 =st.columns([2.35, 4, 1],vertical_alignment="center")
+
+with incol1:
+    pass
+with incol2:
+    st.subheader("Below you can see my project")
+
+with incol3:
+    pass
+
+st.divider()
+
+col7 , col8 , col9 , col10 = st.columns(4 , gap="large" , vertical_alignment="bottom")
 
 with col7:
     st.image("portfolio/Image/1.png")
@@ -101,5 +121,12 @@ with col9:
     st.link_button(label="XL to PDF Converter Link"
                    ,url=("https://github.com/Mirajul100/python-programing/tree/master/invoices")
                    ,help="xl to pdf converter link",use_container_width=(True))
+    
+with col10:
+    st.image("portfolio/Image/6.png")
+    st.title("API")
+    st.link_button(label="API"
+                   ,url=("https://github.com/Mirajul100/Flask_App")
+                   ,help="API",use_container_width=(True))
 
 st.divider()
