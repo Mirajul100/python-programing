@@ -51,7 +51,7 @@ with incol6:
 
 st.divider()
 
-col3 , col4, col5, col6 = st.columns(4 , gap="large" , vertical_alignment="bottom")
+col3 , col4, col5, col6 = st.columns(4 , gap="large" , vertical_alignment="bottom" , border=False)
 
 with col3:
     st.image("portfolio/Image/github.png")
@@ -128,5 +128,25 @@ with col10:
     st.link_button(label="API"
                    ,url=("https://github.com/Mirajul100/Flask_App")
                    ,help="API",use_container_width=(True))
+
+st.divider()
+
+col11 , col12, col13, col14 = st.columns(4 , vertical_alignment="bottom")
+
+with col11 : 
+    st.image("portfolio/Image/weather.jpg")
+    st.title("Weather App")
+    st.link_button(label="Weather App"
+                   ,url=("https://github.com/Mirajul100/Weather-App")
+                   ,help="Weather App",use_container_width=(True))
+
+with col12:
+    pass
+
+with col13:
+    pass
+
+with col14:
+    pass
 
 st.divider()
